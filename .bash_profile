@@ -17,13 +17,8 @@ export CVS_RSH=ssh
 export CVSROOT=:ext:cline@skip.ucsc.edu:/home/cline/.cvs
 export PERLLIB=$PERLLIB:/opt/local/lib/perl5/site_perl/5.8.9
 export PYTHONPATH=$HOME/bin/scripts/python:$HOME/bin/scripts/python/pycbio/lib:$HOME/src/python:/Library/Python/2.6/site-packages/biopython-1.57-py2.6-macosx-10.6-universal.egg/:$PYTHONPATH
+export PERL5LIB=/usr/local/lib/perl5/site_perl
 
-export CGCLOUD_ZONE=us-west-2a
-
-
-export MAGICK_HOME="$HOME/src/ImageMagick"
-export PATH="$MAGICK_HOME/bin:$PATH"
-export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 
 alias  h=history
 alias tawk="awk -F'\t'"
@@ -31,7 +26,8 @@ alias unwindoze="tr '\15' '\n'"
 alias cleanup='rm *~ *bak \#* core >& /dev/null'
 alias resetmic='sudo killall coreaudiod'
 
-alias brca='ssh brcaexchange.cloudapp.net -l brca'
+alias brcap='ssh brcaexchange.cloudapp.net -l brca'
+alias brcac='ssh brcaexchange-cline.cloudapp.net -l brca'
 alias medftp='ssh medbook-ftp.sdsc.edu -l cline'
 alias ohsu='ssh -C cline@acc.ohsu.edu'
 alias podk='ssh cline@10.50.1.100'
