@@ -7,9 +7,13 @@ export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    source $(brew --prefix)/etc/bash_completion
-fi
+case $MACHTYPE in
+    x86_64-apple-darwin15)
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        source $(brew --prefix)/etc/bash_completion
+    fi
+    ;;
+esac
 
 export PATH=.:$HOME/bin:$HOME/scripts:/usr/local/bin:/usr/bin:/sw/bin:/sw/sbin:/opt/local/bin:/usr/X11R6/bin:/opt/local/lib/mysql5/bin:$PATH
 export CLASSPATH=.:"$HOME/bin/picard/*.jar":$CLASSPATH
@@ -31,7 +35,6 @@ alias brcac='ssh brcaexchange-cline.cloudapp.net -l brca'
 alias medftp='ssh medbook-ftp.sdsc.edu -l cline'
 alias ohsu='ssh -C cline@acc.ohsu.edu'
 alias podk='ssh cline@10.50.1.100'
-alias galaxyxena='ssh galaxy@galaxyxena.soe.ucsc.edu'
 alias heron='ssh bioinfocus.com -l cline'
 alias hgw="ssh hgwdev.sdsc.edu -l cline"
 alias skip="ssh skip.ucsc.edu -l cline"
