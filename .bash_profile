@@ -23,6 +23,11 @@ export PERLLIB=$PERLLIB:/opt/local/lib/perl5/site_perl/5.8.9
 export PYTHONPATH=$HOME/bin/scripts/python:$HOME/bin/scripts/python/pycbio/lib:$HOME/src/python:/Library/Python/2.6/site-packages/biopython-1.57-py2.6-macosx-10.6-universal.egg/:$PYTHONPATH
 export PERL5LIB=/usr/local/lib/perl5/site_perl
 
+export WORKON_HOME=$HOME/.venv
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
+
 
 alias  h=history
 alias tawk="awk -F'\t'"
