@@ -16,12 +16,8 @@ case $MACHTYPE in
 esac
 
 export PATH=.:$HOME/bin:$HOME/scripts:/usr/local/bin:/usr/bin:/sw/bin:/sw/sbin:/opt/local/bin:/usr/X11R6/bin:/opt/local/lib/mysql5/bin:$PATH
-export CLASSPATH=.:"$HOME/bin/picard/*.jar":$CLASSPATH
-export CVS_RSH=ssh
-export CVSROOT=:ext:cline@skip.ucsc.edu:/home/cline/.cvs
-export PERLLIB=$PERLLIB:/opt/local/lib/perl5/site_perl/5.8.9
+export PATH=$(pyenv root)/completions/pyenv.bash:$PATH
 export PYTHONPATH=$HOME/bin/scripts/python:$HOME/bin/scripts/python/pycbio/lib:$HOME/src/python:/Library/Python/2.6/site-packages/biopython-1.57-py2.6-macosx-10.6-universal.egg/:$PYTHONPATH
-export PERL5LIB=/usr/local/lib/perl5/site_perl
 
 export WORKON_HOME=$HOME/.venv
 export PROJECT_HOME=$HOME/Devel
@@ -37,17 +33,8 @@ alias resetmic='sudo killall coreaudiod'
 
 alias brcap='ssh brcaexchange.cloudapp.net -l brca'
 alias brcac='ssh brcaexchange-cline.cloudapp.net -l brca'
-alias medftp='ssh medbook-ftp.sdsc.edu -l cline'
-alias ohsu='ssh -C cline@acc.ohsu.edu'
-alias podk='ssh cline@10.50.1.100'
 alias heron='ssh bioinfocus.com -l cline'
 alias hgw="ssh hgwdev.sdsc.edu -l cline"
-alias skip="ssh skip.ucsc.edu -l cline"
-alias metarray="ssh metarray.ucsc.edu -l cline"
-alias hn04="ssh karchin-hn04.icm.jhu.edu -l mcline"
-alias hn02="ssh karchin-hn02.icm.jhu.edu -l mcline"
-alias tcga1="ssh tcga1.kilokluster.ucsc.edu -l cline"
-alias cruncher="ssh cruncher.kilokluster.ucsc.edu -l cline"
 alias synapse="synapse -u cline@soe.ucsc.edu -p Sy,ywbtd0m!"
 
 aws() {
@@ -79,3 +66,27 @@ PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
 
 /usr/local/bin/virtualenvwrapper.sh
+
+# For GnuCash
+#BXC810GU90PXNTXX
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/melissacline/src/google-cloud-sdk/path.bash.inc' ]; then source '/Users/melissacline/src/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/melissacline/src/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/melissacline/src/google-cloud-sdk/completion.bash.inc'; fi
+# added by Anaconda2 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/melissacline/anaconda2/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/Users/melissacline/anaconda2/etc/profile.d/conda.sh" ]; then
+        . "/Users/melissacline/anaconda2/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/Users/melissacline/anaconda2/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
