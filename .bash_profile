@@ -16,7 +16,6 @@ case $MACHTYPE in
 esac
 
 export PATH=.:$HOME/bin:$HOME/scripts:/usr/local/bin:/usr/bin:/sw/bin:/sw/sbin:/opt/local/bin:/usr/X11R6/bin:/opt/local/lib/mysql5/bin:$PATH
-export PATH=$(pyenv root)/completions/pyenv.bash:$PATH
 export PYTHONPATH=$HOME/bin/scripts/python:$HOME/bin/scripts/python/pycbio/lib:$HOME/src/python:/Library/Python/2.6/site-packages/biopython-1.57-py2.6-macosx-10.6-universal.egg/:$PYTHONPATH
 
 export WORKON_HOME=$HOME/.venv
@@ -31,11 +30,9 @@ alias unwindoze="tr '\15' '\n'"
 alias cleanup='rm *~ *bak \#* core >& /dev/null'
 alias resetmic='sudo killall coreaudiod'
 
-alias brcap='ssh brcaexchange.cloudapp.net -l brca'
-alias brcac='ssh brcaexchange-cline.cloudapp.net -l brca'
 alias heron='ssh bioinfocus.com -l cline'
-alias hgw="ssh hgwdev.sdsc.edu -l cline"
 alias synapse="synapse -u cline@soe.ucsc.edu -p Sy,ywbtd0m!"
+alias courtyard='ssh cline@courtyard.gi.ucsc.edu'
 
 aws() {
     ssh -i ~/.ssh/mclineucscedu.pem ubuntu@$1
@@ -90,3 +87,11 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+export PATH=$(pyenv root)/completions/pyenv.bash:$PATH
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+eval "$(pyenv init -)"
+
+
+
+export PATH=/Applications/OpenCRAVAT.app/Contents/Resources/launchers:$PATH
